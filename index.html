@@ -303,14 +303,7 @@ Gen AIは、AIと共に生きる新世代（Generation）が、生成AI（Genera
 <section id="blog" class="section py-16 md:py-24 bg-white">
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 <h2 class="text-3xl md:text-4xl font-extrabold text-center mb-12">ブログ</h2>
-
 <div id="blog-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-<div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all cursor-pointer" onclick="showBlogPost('blog1')">
-<img src="https://imgtu.com/uploads/i7re3kc1/r-chatgpt_image_2025_9_27_08_44_47.webp" alt="AIがもたらすDX革命" class="w-full h-48 object-cover rounded-lg mb-4">
-<h3 class="text-xl font-bold mb-2">AIがもたらすDX革命：企業が今すぐ取り組むべき理由</h3>
-<p class="text-gray-600 mb-4">デジタルトランスフォーメーション（DX）の推進において、AI技術は欠かせない要素となっています。単なる業務効率化にとどまらず、AIは意思決定の質を向上させ、新たなビジネスモデルの創出を可能にします...</p>
-<span class="text-blue-600 hover:text-blue-800 font-bold">続きを読む →</span>
-</div>
 <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all cursor-pointer" onclick="showBlogPost('blog2')">
     <div class="w-full h-48 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg mb-4 flex items-center justify-center">
         <span class="text-6xl text-white font-extrabold">AI×DX</span>
@@ -320,11 +313,9 @@ Gen AIは、AIと共に生きる新世代（Generation）が、生成AI（Genera
     <span class="text-blue-600 hover:text-blue-800 font-bold">続きを読む →</span>
 </div>
 </div>
-
 <div id="admin-panel" class="mt-16 bg-gray-50 p-8 rounded-xl" style="display: none;">
 <h3 class="text-2xl font-bold mb-4 text-center">ブログ管理（管理者用）</h3>
 <p class="text-center text-gray-600 mb-6">以下にHTMLコードを入力して記事を追加できます</p>
-
 <textarea id="blog-input" class="w-full h-64 p-4 border border-gray-300 rounded-lg font-mono text-sm" placeholder='例：
 <div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all">
 <img src="画像URL" alt="記事画像" class="w-full h-48 object-cover rounded-lg mb-4">
@@ -332,7 +323,6 @@ Gen AIは、AIと共に生きる新世代（Generation）が、生成AI（Genera
 <p class="text-gray-600 mb-4">記事の説明文...</p>
 <a href="#" class="text-blue-600 hover:text-blue-800 font-bold">続きを読む →</a>
 </div>'></textarea>
-
 <div class="flex gap-4 mt-4">
 <button onclick="addBlogPost()" class="flex-1 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-300 font-bold">
 記事を追加
@@ -344,7 +334,6 @@ Gen AIは、AIと共に生きる新世代（Generation）が、生成AI（Genera
 </div>
 </div>
 </section>
-
 <section id="blog-post" class="section py-16 md:py-24 bg-white">
 <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
 <button onclick="showSection('blog')" class="mb-8 px-6 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition duration-300 font-bold">
