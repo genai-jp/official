@@ -1,0 +1,702 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>株式会社Gen AI - AI導入コンサルティング・英語コーチング | 生成AI活用支援</title>
+<meta name="description" content="株式会社Gen AIは生成AI導入コンサルティングとAI活用英語コーチングを提供。DXスタートプラン59,000円から。プロンプティング、アプリ開発、英語学習まで一貫サポート。">
+<meta name="keywords" content="生成AI,AIコンサルティング,DX支援,プロンプティング,AI英語学習,ChatGPT活用,業務効率化,Gen AI,AI導入,コーチング">
+<meta name="author" content="株式会社Gen AI">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://あなたのユーザー名.github.io/リポジトリ名/">
+
+<meta property="og:title" content="株式会社Gen AI - AI導入コンサルティング・英語コーチング">
+<meta property="og:description" content="生成AI活用支援で業務効率化を実現。プロンプティングからアプリ開発まで一貫サポート。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://あなたのユーザー名.github.io/リポジトリ名/">
+<meta property="og:site_name" content="株式会社Gen AI">
+<meta property="og:locale" content="ja_JP">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="株式会社Gen AI - AI導入コンサルティング">
+<meta name="twitter:description" content="生成AI活用支援で業務効率化を実現。プロンプティングからアプリ開発まで一貫サポート。">
+
+<script type="application/ld+json">
+{
+"@context": "https://schema.org",
+"@type": "Organization",
+"name": "株式会社Gen AI",
+"alternateName": "Gen AI Inc.",
+"url": "https://あなたのユーザー名.github.io/リポジトリ名/",
+"description": "生成AI導入コンサルティングとAI活用英語コーチングを提供する企業",
+"foundingDate": "2025",
+"contactPoint": {
+"@type": "ContactPoint",
+"contactType": "Customer Service",
+"email": "mindstaff.yota@gmail.com"
+}
+}
+</script>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+<style>
+body {
+font-family: 'Noto Sans JP', sans-serif;
+background-color: #f8fafc;
+}
+.hero-gradient {
+background: linear-gradient(135deg, #1d4ed8 0%, #3b82f6 100%);
+}
+.text-gradient {
+background: linear-gradient(90deg, #3b82f6, #06b6d4);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
+}
+.feature-card {
+transition: all 0.3s ease;
+}
+.feature-card:hover {
+transform: translateY(-5px);
+box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+border-left: 4px solid #3b82f6;
+}
+.section {
+display: none;
+}
+.section.active {
+display: block;
+}
+
+/* タッチデバイス用の最適化 */
+@media (hover: none) {
+.feature-card:hover {
+transform: none;
+}
+}
+
+/* スムーズなスクロール */
+html {
+scroll-behavior: smooth;
+}
+</style>
+</head>
+<body class="text-gray-800">
+
+<header class="bg-white shadow-md sticky top-0 z-50">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
+<h1 class="flex items-center space-x-3 m-0">
+<a href="#home" onclick="showSection('home')" class="flex items-center space-x-3 cursor-pointer">
+<img src="https://imgtu.com/uploads/jfqlo0zn/r-file_23d802.webp" alt="Gen AI Logo" class="h-12 w-12">
+<span class="text-2xl font-extrabold" style="color: #001f54;">株式会社Gen AI</span>
+</a>
+</h1>
+<nav class="hidden md:block space-x-8" aria-label="メインナビゲーション">
+<a href="#service" onclick="showSection('service')" class="text-gray-600 hover:text-blue-600 font-medium cursor-pointer">サービス</a>
+<a href="#about" onclick="showSection('about')" class="text-gray-600 hover:text-blue-600 font-medium cursor-pointer">About Us</a>
+<a href="#blog" onclick="showSection('blog')" class="text-gray-600 hover:text-blue-600 font-medium cursor-pointer">ブログ</a>
+<a href="https://lin.ee/ColWYJw" target="_blank" rel="noopener" class="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-300 shadow-lg">無料セミナー予約</a>
+</nav>
+<button id="mobile-menu-button" class="md:hidden text-gray-600 hover:text-blue-600" onclick="toggleMobileMenu()">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+</button>
+</div>
+
+<div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200">
+<nav class="px-4 py-4 space-y-3" aria-label="モバイルナビゲーション">
+<a href="#service" onclick="showSection('service'); toggleMobileMenu();" class="block text-gray-600 hover:text-blue-600 font-medium py-2">サービス</a>
+<a href="#about" onclick="showSection('about'); toggleMobileMenu();" class="block text-gray-600 hover:text-blue-600 font-medium py-2">About Us</a>
+<a href="#blog" onclick="showSection('blog'); toggleMobileMenu();" class="block text-gray-600 hover:text-blue-600 font-medium py-2">ブログ</a>
+<a href="https://lin.ee/ColWYJw" target="_blank" rel="noopener" class="block text-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-300 shadow-lg">無料セミナー予約</a>
+</nav>
+</div>
+</header>
+
+<section id="home" class="section active">
+<div class="hero-gradient text-white py-20 md:py-32">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+<h2 class="text-4xl md:text-6xl font-extrabold mb-4 leading-tight">
+AIと共に生きる新世代へ<br class="hidden sm:block"><span class="text-cyan-300">可能性を解き放つ</span>
+</h2>
+<p class="text-lg md:text-2xl font-light mb-8 max-w-3xl mx-auto px-4">
+テクノロジー・言語・コストの壁を攻略し、<br class="hidden sm:block">ビジネスをあらゆる角度から効率化
+</p>
+<a href="#service" onclick="showSection('service')" class="inline-block px-8 py-3 bg-white text-blue-600 text-lg font-bold rounded-full shadow-2xl hover:bg-gray-100 transition duration-300 transform hover:scale-105">
+サービスを見る
+</a>
+</div>
+</div>
+
+<div class="py-16 md:py-24 bg-white">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<h2 class="text-3xl md:text-4xl font-extrabold text-center mb-12">
+<span class="text-gradient">Gen AI</span>の特徴
+</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+<div class="feature-card bg-gray-50 p-6 rounded-xl shadow-lg border-l-4 border-transparent hover:border-blue-500">
+<div class="text-5xl mb-4 text-blue-500">👥</div>
+<h3 class="text-xl font-bold mb-3">人材</h3>
+<p class="text-gray-600">エンジニア出身のコンサルタントが、お客様のニーズに寄り添いサポートします。</p>
+</div>
+
+<div class="feature-card bg-gray-50 p-6 rounded-xl shadow-lg border-l-4 border-transparent hover:border-blue-500">
+<div class="text-5xl mb-4 text-cyan-500">🛠️</div>
+<h3 class="text-xl font-bold mb-3">ツール</h3>
+<p class="text-gray-600">膨大なリストから最適なAIツールを提案し、最短かつ最低限のコストで実現します。</p>
+</div>
+
+<div class="feature-card bg-gray-50 p-6 rounded-xl shadow-lg border-l-4 border-transparent hover:border-blue-500">
+<div class="text-5xl mb-4 text-green-500">💼</div>
+<h3 class="text-xl font-bold mb-3">コンサルティング</h3>
+<p class="text-gray-600">ヒアリングから設計、運用、アフターサービスまで一貫したサポートを提供します。</p>
+</div>
+
+</div>
+</div>
+</div>
+</section>
+
+<section id="service" class="section py-16 md:py-24 bg-white">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<h2 class="text-3xl md:text-4xl font-extrabold text-center mb-4">サービス</h2>
+<p class="text-center text-gray-600 mb-12 text-lg">お客様のニーズに合わせた4つのプランをご用意しています</p>
+
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+
+<div class="bg-white p-8 rounded-xl shadow-2xl border-t-4 border-blue-500 hover:shadow-xl transition-all">
+<h3 class="text-2xl font-bold mb-4 text-blue-600">DXスタートプラン</h3>
+<div class="mb-6">
+<p class="text-4xl font-extrabold text-gray-800">¥59,000</p>
+<p class="text-gray-600">3日間の集中サポート</p>
+</div>
+<div class="mb-6">
+<p class="text-gray-700 leading-relaxed">
+生成AI活用の要であるプロンプティングの基礎から応用までを集中サポート。顧客ごとにプロンプトを設計し、膨大なリストから最適なツールを提案、最短かつ最低限のコストで<strong>「ライティング→資料作成→マーケティング」</strong>のノウハウ獲得を実現します。
+</p>
+</div>
+<a href="https://lin.ee/ColWYJw" target="_blank" rel="noopener" class="block w-full text-center px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-300 font-bold">
+詳細を問い合わせる
+</a>
+</div>
+
+<div class="bg-white p-8 rounded-xl shadow-2xl border-t-4 border-cyan-500 hover:shadow-xl transition-all">
+<h3 class="text-2xl font-bold mb-4 text-cyan-600">DXアプリケーション開発</h3>
+<div class="mb-6">
+<p class="text-4xl font-extrabold text-gray-800">¥110,000</p>
+<p class="text-gray-600">一貫したサポート</p>
+</div>
+<div class="mb-6">
+<p class="text-gray-700 leading-relaxed">
+ヒアリングに基づきアプリのユースケースを決定。学習データ、搭載モデル、セキュリティ等を協議の上、アプリケーションを設計し、<strong>「PoC→本格運用→アフターサービス」</strong>まで一貫サポートを提供します。
+</p>
+</div>
+<a href="https://lin.ee/ColWYJw" target="_blank" rel="noopener" class="block w-full text-center px-6 py-3 bg-cyan-600 text-white rounded-lg hover:bg-cyan-700 transition duration-300 font-bold">
+詳細を問い合わせる
+</a>
+</div>
+
+<div class="bg-white p-8 rounded-xl shadow-2xl border-t-4 border-green-500 hover:shadow-xl transition-all">
+<h3 class="text-2xl font-bold mb-4 text-green-600">AI×英語コーチング</h3>
+<div class="mb-6">
+<p class="text-4xl font-extrabold text-gray-800">¥70,000</p>
+<p class="text-gray-600">3ヶ月プログラム</p>
+</div>
+<div class="mb-6">
+<p class="text-gray-700 leading-relaxed">
+AIを組み込んだ3ヶ月単位の英語学習プログラム。大手予備校出身のコンサルタントとともに、初回＋月2回（合計7回）のコーチングと日々の進捗管理に基づいて、最短で効率的かつ持続可能な学習習慣を獲得します。
+</p>
+</div>
+<a href="https://lin.ee/ColWYJw" target="_blank" rel="noopener" class="block w-full text-center px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700 transition duration-300 font-bold">
+詳細を問い合わせる
+</a>
+</div>
+
+<div class="bg-white p-8 rounded-xl shadow-2xl border-t-4 border-purple-500 hover:shadow-xl transition-all">
+<h3 class="text-2xl font-bold mb-4 text-purple-600">カスタムプラン</h3>
+<div class="mb-6">
+<p class="text-4xl font-extrabold text-gray-800">お問い合わせ</p>
+<p class="text-gray-600">柔軟なソリューション</p>
+</div>
+<div class="mb-6">
+<p class="text-gray-700 leading-relaxed">
+HP作成、マーケティング特化型コースなど、お客様のご要望に沿った柔軟なソリューションを提供いたします。貴社の課題やビジョンをお聞かせいただき、最適なプランをカスタムメイドで設計します。
+</p>
+</div>
+<a href="https://lin.ee/ColWYJw" target="_blank" rel="noopener" class="block w-full text-center px-6 py-3 bg-purple-600 text-white rounded-lg hover:bg-purple-700 transition duration-300 font-bold">
+詳細を問い合わせる
+</a>
+</div>
+
+</div>
+</div>
+</section>
+
+<section id="about" class="section py-16 md:py-24 bg-gray-50">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<h2 class="text-3xl md:text-4xl font-extrabold text-center mb-12">About Us</h2>
+
+<div class="mb-16">
+<h3 class="text-2xl md:text-3xl font-bold text-center mb-8 text-blue-600">ミッション</h3>
+<div class="bg-white p-8 md:p-12 rounded-xl shadow-2xl max-w-5xl mx-auto">
+<p class="text-lg md:text-xl text-gray-700 leading-relaxed mb-6">
+Gen AIは、AIと共に生きる新世代（Generation）が、生成AI（Generative）技術を駆使して、あらゆる（General）可能性を解き放つ社会を創造します。
+</p>
+
+<p class="text-lg md:text-xl text-gray-700 leading-relaxed mb-6">
+<span class="font-bold text-gray-800">「人材＋ツール＝コンサルティング」</span>の3次元アプローチで、テクノロジーと言語、コストの壁を攻略。
+</p>
+
+<p class="text-lg md:text-xl text-gray-700 leading-relaxed mb-6">
+当社のミッションは、AIコンサルティングを通じて企業の導入支援や課題解決を遂行するとともに、AIを活用した英語学習コーチングを提供し、グローバル社会で必要不可欠な言語力とデジタルリテラシーの両立を後押しすることです。
+</p>
+
+<p class="text-lg md:text-xl text-gray-700 leading-relaxed">
+私たちは、生成AIが一部の専門家だけのものではなく、あらゆるビジネスパーソンや学習者にとって身近で実用的なツールとなる未来を描いています。技術導入の壁を取り払い、<span class="font-bold text-gray-800">「誰もがAIを正しく、ミニマルコストで、創造的かつ安全に活用できる」</span>環境を提供することで、個人の生産性向上と企業の競争力強化を同時に支援します。
+</p>
+</div>
+</div>
+
+<div>
+<h3 class="text-2xl md:text-3xl font-bold text-center mb-8 text-blue-600">会社概要</h3>
+<div class="bg-white p-8 md:p-12 rounded-xl shadow-2xl max-w-5xl mx-auto">
+<table class="w-full text-left">
+<tbody class="text-gray-700">
+<tr class="border-b border-gray-200">
+<th class="py-4 pr-8 font-bold text-gray-800 w-1/3">会社名</th>
+<td class="py-4">株式会社Gen AI</td>
+</tr>
+<tr class="border-b border-gray-200">
+<th class="py-4 pr-8 font-bold text-gray-800">設立</th>
+<td class="py-4">2025年</td>
+</tr>
+<tr class="border-b border-gray-200">
+<th class="py-4 pr-8 font-bold text-gray-800">代表者</th>
+<td class="py-4">代表取締役 小橋 一元</td>
+</tr>
+<tr class="border-b border-gray-200">
+<th class="py-4 pr-8 font-bold text-gray-800">所在地</th>
+<td class="py-4">〒541-0042<br>大阪府大阪市中央区今橋1-7-19北浜BLD.11F</td>
+</tr>
+<tr class="border-b border-gray-200">
+<th class="py-4 pr-8 font-bold text-gray-800">事業内容</th>
+<td class="py-4">
+・生成AI導入コンサルティング<br>
+・AIアプリケーション開発<br>
+・AI活用英語コーチング<br>
+・DX推進支援
+</td>
+</tr>
+<tr>
+<th class="py-4 pr-8 font-bold text-gray-800">お問い合わせ</th>
+<td class="py-4">mindstaff.yota@gmail.com</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+
+<section id="blog" class="section py-16 md:py-24 bg-white">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<h2 class="text-3xl md:text-4xl font-extrabold text-center mb-12">ブログ</h2>
+
+<div id="blog-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all cursor-pointer" onclick="showBlogPost('blog1')">
+<img src="https://imgtu.com/uploads/i7re3kc1/r-chatgpt_image_2025_9_27_08_44_47.webp" alt="AIがもたらすDX革命" class="w-full h-48 object-cover rounded-lg mb-4">
+<h3 class="text-xl font-bold mb-2">AIがもたらすDX革命：企業が今すぐ取り組むべき理由</h3>
+<p class="text-gray-600 mb-4">デジタルトランスフォーメーション（DX）の推進において、AI技術は欠かせない要素となっています。単なる業務効率化にとどまらず、AIは意思決定の質を向上させ、新たなビジネスモデルの創出を可能にします...</p>
+<span class="text-blue-600 hover:text-blue-800 font-bold">続きを読む →</span>
+</div>
+<div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all cursor-pointer" onclick="showBlogPost('blog2')">
+    <div class="w-full h-48 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-lg mb-4 flex items-center justify-center">
+        <span class="text-6xl text-white font-extrabold">AI×DX</span>
+    </div>
+    <h3 class="text-xl font-bold mb-2">プロンプティングの極意：DXスタートプランで得られる「ライティング→資料作成→マーケティング」ノウハウ</h3>
+    <p class="text-gray-600 mb-4">生成AI活用の成否を分けるのが「プロンプティング」の技術です。当社のDXスタートプランでは、プロンプティングの基礎から応用までを3日間で集中サポート。ライティング、資料作成、マーケティングの業務を最短かつミニマルコストで効率化するノウハウを獲得し、企業の競争優位性を確立します。</p>
+    <span class="text-blue-600 hover:text-blue-800 font-bold">続きを読む →</span>
+</div>
+</div>
+
+<div id="admin-panel" class="mt-16 bg-gray-50 p-8 rounded-xl" style="display: none;">
+<h3 class="text-2xl font-bold mb-4 text-center">ブログ管理（管理者用）</h3>
+<p class="text-center text-gray-600 mb-6">以下にHTMLコードを入力して記事を追加できます</p>
+
+<textarea id="blog-input" class="w-full h-64 p-4 border border-gray-300 rounded-lg font-mono text-sm" placeholder='例：
+<div class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all">
+<img src="画像URL" alt="記事画像" class="w-full h-48 object-cover rounded-lg mb-4">
+<h3 class="text-xl font-bold mb-2">記事タイトル</h3>
+<p class="text-gray-600 mb-4">記事の説明文...</p>
+<a href="#" class="text-blue-600 hover:text-blue-800 font-bold">続きを読む →</a>
+</div>'></textarea>
+
+<div class="flex gap-4 mt-4">
+<button onclick="addBlogPost()" class="flex-1 px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-300 font-bold">
+記事を追加
+</button>
+<button onclick="clearBlogs()" class="px-6 py-3 bg-red-600 text-white rounded-lg hover:bg-red-700 transition duration-300 font-bold">
+すべて削除
+</button>
+</div>
+</div>
+</div>
+</section>
+
+<section id="blog-post" class="section py-16 md:py-24 bg-white">
+<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+<button onclick="showSection('blog')" class="mb-8 px-6 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition duration-300 font-bold">
+← ブログ一覧に戻る
+</button>
+
+<article id="blog-post-content" class="bg-white rounded-xl shadow-2xl overflow-hidden">
+</article>
+</div>
+</section>
+
+<section id="privacy" class="section py-16 md:py-24 bg-white">
+<div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+<h2 class="text-3xl md:text-4xl font-extrabold text-center mb-12">プライバシーポリシー</h2>
+
+<div class="bg-white p-8 md:p-12 rounded-xl shadow-2xl">
+<div class="space-y-8 text-gray-700">
+<div>
+<h3 class="text-xl font-bold mb-4 text-gray-800">1. 個人情報の取得について</h3>
+<p class="leading-relaxed">当社は、適正かつ公正な手段によって個人情報を取得いたします。取得の際には、利用目的を明示し、ご本人の同意を得た上で取得いたします。</p>
+</div>
+
+<div>
+<h3 class="text-xl font-bold mb-4 text-gray-800">2. 個人情報の利用目的</h3>
+<p class="leading-relaxed mb-2">取得した個人情報は、以下の目的で利用いたします。</p>
+<ul class="list-disc list-inside space-y-2 ml-4">
+<li>サービスの提供およびお問い合わせへの対応</li>
+<li>契約の履行および請求業務</li>
+<li>新サービスや各種イベント等の案内</li>
+<li>マーケティング活動および統計データの作成</li>
+</ul>
+</div>
+
+<div>
+<h3 class="text-xl font-bold mb-4 text-gray-800">3. 個人情報の第三者提供</h3>
+<p class="leading-relaxed">当社は、法令に基づく場合を除き、ご本人の同意なく個人情報を第三者に提供することはありません。</p>
+</div>
+
+<div>
+<h3 class="text-xl font-bold mb-4 text-gray-800">4. 個人情報の管理</h3>
+<p class="leading-relaxed">当社は、個人情報の正確性を保ち、安全に管理するため、適切な措置を講じます。また、個人情報への不正アクセス、紛失、破壊、改ざん、漏洩等を防止するため、必要な対策を実施いたします。</p>
+</div>
+
+<div>
+<h3 class="text-xl font-bold mb-4 text-gray-800">5. 個人情報の開示・訂正・削除</h3>
+<p class="leading-relaxed">ご本人から個人情報の開示、訂正、削除等の請求があった場合、当社は速やかに対応いたします。お問い合わせは下記の窓口までご連絡ください。</p>
+</div>
+
+<div>
+<h3 class="text-xl font-bold mb-4 text-gray-800">6. Cookieの使用について</h3>
+<p class="leading-relaxed">当社のウェブサイトでは、サービスの向上やユーザー体験の最適化を目的として、Cookieを使用する場合があります。Cookieの使用を希望されない場合は、ブラウザの設定により無効化することができます。</p>
+</div>
+
+<div>
+<h3 class="text-xl font-bold mb-4 text-gray-800">7. プライバシーポリシーの変更</h3>
+<p class="leading-relaxed">当社は、法令の変更や事業内容の変更等に伴い、本ポリシーを予告なく変更することがあります。変更後のプライバシーポリシーは、当ウェブサイトに掲載した時点から効力を生じるものとします。</p>
+</div>
+
+<div class="pt-4 border-t border-gray-200">
+<p class="text-sm text-gray-600">お問い合わせ窓口：mindstaff.yota@gmail.com</p>
+<p class="text-sm text-gray-600 mt-2">制定日：2025年1月1日</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="terms" class="section py-16 md:py-24 bg-gray-50">
+<div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+<h2 class="text-3xl md:text-4xl font-extrabold text-center mb-12">利用規約</h2>
+
+<div class="bg-white p-8 md:p-12 rounded-xl shadow-2xl">
+<div class="space-y-8 text-gray-700">
+<div>
+<h3 class="text-xl font-bold mb-4 text-gray-800">第1条（適用）</h3>
+<p class="leading-relaxed">本規約は、株式会社Gen AI（以下「当社」といいます）が提供するすべてのサービス（以下「本サービス」といいます）の利用に関する条件を定めるものです。利用者は、本規約に同意した上で本サービスを利用するものとします。</p>
+</div>
+
+<div>
+<h3 class="text-xl font-bold mb-4 text-gray-800">第2条（利用登録）</h3>
+<p class="leading-relaxed">本サービスの利用を希望する方は、当社所定の方法により利用登録を申請し、当社がこれを承認することで利用登録が完了します。当社は、申請内容に虚偽や不正がある場合、登録を拒否することができます。</p>
+</div>
+
+<div>
+<h3 class="text-xl font-bold mb-4 text-gray-800">第3条（禁止事項）</h3>
+<p class="leading-relaxed mb-2">利用者は、本サービスの利用にあたり、以下の行為を行ってはなりません。</p>
+<ul class="list-disc list-inside space-y-2 ml-4">
+<li>法令または公序良俗に違反する行為</li>
+<li>犯罪行為に関連する行為</li>
+<li>当社または第三者の知的財産権、肖像権、プライバシー権その他の権利または利益を侵害する行為</li>
+<li>当社のサービス運営を妨害するおそれのある行為</li>
+<li>不正アクセスまたはこれを試みる行為</li>
+<li>他の利用者に関する個人情報等を収集または蓄積する行為</li>
+<li>その他、当社が不適切と判断する行為</li>
+</ul>
+</div>
+
+<div>
+<h3 class="text-xl font-bold mb-4 text-gray-800">第4条（サービスの提供の停止等）</h3>
+<p class="leading-relaxed">当社は、以下のいずれかの事由があると判断した場合、利用者に事前に通知することなく本サービスの全部または一部の提供を停止または中断することができるものとします。</p>
+<ul class="list-disc list-inside space-y-2 ml-4 mt-2">
+<li>システムの保守点検または更新を行う場合</li>
+<li>地震、落雷、火災、停電等の不可抗力により本サービスの提供が困難となった場合</li>
+<li>その他、当社が本サービスの提供が困難と判断した場合</li>
+</ul>
+</div>
+
+<div>
+<h3 class="text-xl font-bold mb-4 text-gray-800">第5条（利用制限および登録抹消）</h3>
+<p class="leading-relaxed">当社は、利用者が以下のいずれかに該当する場合、事前の通知なく利用者に対して本サービスの全部または一部の利用を制限し、または利用登録を抹消することができるものとします。</p>
+<ul class="list-disc list-inside space-y-2 ml-4 mt-2">
+<li>本規約のいずれかの条項に違反した場合</li>
+<li>登録事項に虚偽の事実があることが判明した場合</li>
+<li>料金等の支払債務の不履行があった場合</li>
+<li>その他、当社が本サービスの利用を適当でないと判断した場合</li>
+</ul>
+</div>
+
+<div>
+<h3 class="text-xl font-bold mb-4 text-gray-800">第6条（免責事項）</h3>
+<p class="leading-relaxed">当社は、本サービスに関して利用者が被った損害について、当社の故意または重過失による場合を除き、一切の責任を負いません。また、本サービスに関連して利用者と第三者との間で生じた紛争については、当社は一切の責任を負いません。</p>
+</div>
+
+<div>
+<h3 class="text-xl font-bold mb-4 text-gray-800">第7条（サービス内容の変更等）</h3>
+<p class="leading-relaxed">当社は、利用者に通知することなく、本サービスの内容を変更しまたは本サービスの提供を中止することができるものとし、これによって利用者に生じた損害について一切の責任を負いません。</p>
+</div>
+
+<div>
+<h3 class="text-xl font-bold mb-4 text-gray-800">第8条（利用規約の変更）</h3>
+<p class="leading-relaxed">当社は、必要と判断した場合には、利用者に通知することなくいつでも本規約を変更することができるものとします。変更後の利用規約は、当ウェブサイトに掲載した時点から効力を生じるものとします。</p>
+</div>
+
+<div>
+<h3 class="text-xl font-bold mb-4 text-gray-800">第9条（準拠法・裁判管轄）</h3>
+<p class="leading-relaxed">本規約の解釈にあたっては、日本法を準拠法とします。本サービスに関して紛争が生じた場合には、当社の本店所在地を管轄する裁判所を専属的合意管轄とします。</p>
+</div>
+
+<div class="pt-4 border-t border-gray-200">
+<p class="text-sm text-gray-600">制定日：2025年1月1日</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section id="contact" class="py-16 bg-blue-600">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+<h2 class="text-3xl md:text-4xl font-extrabold mb-4">
+お問い合わせ
+</h2>
+<p class="text-xl mb-8">
+サービスに関するご質問やご相談は、お気軽にお問い合わせください。
+</p>
+<a href="https://forms.gle/QNdFELX7cc7QYLVL6" target="_blank" rel="noopener" class="inline-block px-10 py-4 bg-white text-blue-600 text-xl font-bold rounded-full shadow-2xl hover:bg-gray-100 transition duration-300 transform hover:scale-105">
+お問い合わせフォームへ
+</a>
+</div>
+</section>
+
+<footer class="bg-gray-800 text-white py-8">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+<p class="mb-4">© 2025 Gen AI Inc. All rights reserved.</p>
+<div class="space-x-4">
+<a href="#privacy" onclick="showSection('privacy')" class="text-gray-400 hover:text-white text-sm cursor-pointer">プライバシーポリシー</a>
+<a href="#terms" onclick="showSection('terms')" class="text-gray-400 hover:text-white text-sm cursor-pointer">利用規約</a>
+</div>
+</div>
+</footer>
+
+<script>
+// ブログ記事データ
+const blogPosts = {
+blog1: {
+title: 'AIがもたらすDX革命：企業が今すぐ取り組むべき理由',
+image: 'https://imgtu.com/uploads/i7re3kc1/r-chatgpt_image_2025_9_27_08_44_47.webp',
+date: '2025年1月15日',
+content: `
+<h2 class="text-3xl font-bold mb-6">はじめに</h2>
+<p class="text-gray-700 leading-relaxed mb-6">
+デジタルトランスフォーメーション（DX）の推進において、AI技術は欠かせない要素となっています。単なる業務効率化にとどまらず、AIは意思決定の質を向上させ、新たなビジネスモデルの創出を可能にします。
+</p>
+
+<h2 class="text-3xl font-bold mb-6 mt-8">AI技術がもたらす変革</h2>
+<p class="text-gray-700 leading-relaxed mb-6">
+ChatGPTをはじめとする生成AIの登場により、中小企業でも低コストでDXを実現できる時代が到来しました。これまで大企業にしか手が届かなかった高度なAI技術が、今や誰でも利用できるようになっています。
+</p>
+
+<h3 class="text-2xl font-bold mb-4 mt-6">主な活用例</h3>
+<ul class="list-disc list-inside space-y-3 mb-6 text-gray-700">
+<li><strong>ライティング業務の効率化</strong>：メール作成、レポート作成、コンテンツ制作</li>
+<li><strong>資料作成の自動化</strong>：プレゼンテーション、企画書、提案書の作成支援</li>
+<li><strong>マーケティング最適化</strong>：顧客分析、広告文作成、SNS運用</li>
+<li><strong>カスタマーサポート</strong>：チャットボット、FAQ自動応答</li>
+</ul>
+
+<h2 class="text-3xl font-bold mb-6 mt-8">プロンプティングの重要性</h2>
+<p class="text-gray-700 leading-relaxed mb-6">
+AI技術を最大限に活用するためには、「プロンプティング」と呼ばれる技術の習得が不可欠です。適切な指示を与えることで、AIの出力品質は劇的に向上します。
+</p>
+
+<h2 class="text-3xl font-bold mb-6 mt-8">今すぐ始めるべき理由</h2>
+<p class="text-gray-700 leading-relaxed mb-6">
+競合他社がAIを活用し始めている今、早期導入による先行者利益を獲得するチャンスです。適切なツールを選定し、プロンプティング技術を習得することで、競争優位性を確立できます。
+</p>
+
+<h2 class="text-3xl font-bold mb-6 mt-8">まとめ</h2>
+<p class="text-gray-700 leading-relaxed mb-6">
+今こそ、AI活用によるDX推進の第一歩を踏み出すべきです。Gen AIでは、貴社のニーズに合わせた最適なAI導入支援を提供しています。
+</p>
+
+<div class="mt-8 p-6 bg-blue-50 rounded-lg">
+<p class="text-gray-700 mb-4 font-bold">AI導入に関するご相談はこちら</p>
+<a href="https://lin.ee/ColWYJw" target="_blank" rel="noopener" class="inline-block px-8 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-300 font-bold">
+無料相談を予約する
+</a>
+</div>
+`
+},
+// ★★★ ここから追加したブログ記事の詳細（JavaScriptオブジェクト） ★★★
+blog2: {
+title: 'プロンプティングの極意：DXスタートプランで得られる「ライティング→資料作成→マーケティング」ノウハウ',
+image: '', // この記事では画像URLは使用せず、CSSで対応
+date: '2025年1月20日',
+content: `
+<h2 class="text-3xl font-bold mb-6">DXスタートプランでAI活用をマスター</h2>
+<p class="text-gray-700 leading-relaxed mb-6">
+当社の**DXスタートプラン（¥59,000 / 3日間）**は、生成AIのパワーを最大限に引き出すための実践的なノウハウを集中して学べるプログラムです。特に、AI活用の中核となる**プロンプティング**技術の習得に焦点を当てています。
+</p>
+
+<h2 class="text-3xl font-bold mb-6 mt-8">プロンプティングがビジネスを変える</h2>
+<p class="text-gray-700 leading-relaxed mb-6">
+AIへの指示出し（プロンプティング）の質が、出力の品質と業務効率に直結します。お客様の業務内容に合わせてプロンプトを設計し、汎用的なノウハウではなく、**すぐに成果に繋がる実践的な技術**を提供します。
+</p>
+
+<h3 class="text-2xl font-bold mb-4 mt-6">集中サポートで獲得できる3つのノウハウ</h3>
+<ul class="list-disc list-inside space-y-3 mb-6 text-gray-700">
+<li><strong>ライティングの効率化</strong>：ビジネスメール、報告書、記事の草案作成をAIで劇的に加速。</li>
+<li><strong>資料作成の自動化</strong>：企画書やプレゼン資料の構成案、テキスト生成を短時間で実現。</li>
+<li><strong>マーケティングの最適化</strong>：ターゲットに響くキャッチコピー、広告文、SNS投稿文の生成ノウハウ。</li>
+</ul>
+
+<h2 class="text-3xl font-bold mb-6 mt-8">ミニマルコストで競争優位性を確立</h2>
+<p class="text-gray-700 leading-relaxed mb-6">
+AIツールは無数に存在しますが、その中からお客様の課題に最適なツールを厳選して提案することで、**最短かつ最低限のコスト**でDXを実現します。この機会に、AI活用への第一歩を踏み出し、競合に差をつけましょう。
+</p>
+
+<div class="mt-8 p-6 bg-blue-50 rounded-lg">
+<p class="text-gray-700 mb-4 font-bold">DXスタートプランの詳細・ご予約はこちら</p>
+<a href="https://lin.ee/ColWYJw" target="_blank" rel="noopener" class="inline-block px-8 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition duration-300 font-bold">
+無料相談を予約する
+</a>
+</div>
+`
+}
+// ★★★ ここまで追加 ★★★
+};
+
+function showBlogPost(postId) {
+const post = blogPosts[postId];
+if (!post) return;
+
+// 画像が空の場合はプレースホルダーのHTMLを挿入
+const imageHtml = post.image ? `<img src="${post.image}" alt="${post.title}" class="w-full h-64 md:h-96 object-cover">` : `<div class="w-full h-64 md:h-96 bg-gradient-to-r from-blue-500 to-cyan-500 flex items-center justify-center"><span class="text-8xl text-white font-extrabold">AI×DX</span></div>`;
+
+const contentHtml = `
+${imageHtml}
+<div class="p-8 md:p-12">
+<p class="text-gray-500 mb-4">${post.date}</p>
+<h1 class="text-3xl md:text-4xl font-bold mb-8 text-gray-800">${post.title}</h1>
+<div class="prose prose-lg max-w-none">
+${post.content}
+</div>
+</div>
+`;
+
+document.getElementById('blog-post-content').innerHTML = contentHtml;
+showSection('blog-post');
+}
+
+function toggleMobileMenu() {
+const menu = document.getElementById('mobile-menu');
+menu.classList.toggle('hidden');
+}
+
+function showSection(sectionId) {
+document.querySelectorAll('.section').forEach(section => {
+section.classList.remove('active');
+});
+document.getElementById(sectionId).classList.add('active');
+
+// ページトップへスクロール（モバイルで見やすくするため）
+window.scrollTo({ top: 0, behavior: 'smooth' });
+
+if (sectionId === 'blog') {
+loadBlogs();
+}
+}
+
+function addBlogPost() {
+const input = document.getElementById('blog-input');
+const htmlCode = input.value.trim();
+
+if (!htmlCode) {
+alert('HTMLコードを入力してください');
+return;
+}
+
+const blogs = [];
+blogs.push(htmlCode);
+
+input.value = '';
+loadBlogs();
+alert('記事を追加しました！');
+}
+
+function loadBlogs() {
+const container = document.getElementById('blog-container');
+// 記事を直接HTMLに記述したため、localStorageからの読み込みは不要
+
+// URLパラメータをチェックして管理画面の表示を制御
+const urlParams = new URLSearchParams(window.location.search);
+const adminPanel = document.getElementById('admin-panel');
+if (urlParams.get('admin') === 'true') {
+adminPanel.style.display = 'block';
+} else {
+adminPanel.style.display = 'none';
+}
+}
+
+function clearBlogs() {
+if (confirm('すべてのブログ記事を削除しますか？')) {
+// この機能は現在HTMLに直接記述しているため、動作しません。
+// 動的に記事を追加するロジックに変更した場合に実装が必要です。
+document.getElementById('blog-container').innerHTML = '<p class="col-span-full text-center text-gray-600 text-lg">まだ記事がありません。管理者用フォームから記事を追加してください。</p>';
+alert('すべての記事を削除しました');
+}
+}
+
+window.addEventListener('load', function() {
+const hash = window.location.hash.substring(1);
+if (hash && ['service', 'about', 'blog', 'privacy', 'terms'].includes(hash)) {
+showSection(hash);
+} else if (hash && hash.startsWith('blog-')) {
+// blog-post-idの形式の場合
+const postId = hash.replace('blog-', '');
+if (blogPosts[postId]) {
+showBlogPost(postId);
+}
+}
+});
+</script>
+
+</body>
+</html>
