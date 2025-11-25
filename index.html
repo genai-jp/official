@@ -43,46 +43,84 @@
 
 <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
-<style>
-body {
-font-family: 'Noto Sans JP', sans-serif;
-background-color: #f8fafc;
-}
-.hero-gradient {
-background: linear-gradient(135deg, #1d4ed8 0%, #3b82f6 100%);
-}
-.text-gradient {
-background: linear-gradient(90deg, #3b82f6, #06b6d4);
--webkit-background-clip: text;
--webkit-text-fill-color: transparent;
-}
-.feature-card {
-transition: all 0.3s ease;
-}
-.feature-card:hover {
-transform: translateY(-5px);
-box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-border-left: 4px solid #3b82f6;
-}
-.section {
-display: none;
-}
-.section.active {
-display: block;
-}
+    <style>
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: #f8fafc;
+        }
+        .font-en {
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        /* ヒーローセクション：画像 + オーバーレイ */
+       .hero-bg {
+            /* グラデーション背景 */
+            background: linear-gradient(135deg, rgba(0, 10, 30, 0.95) 0%, rgba(0, 31, 84, 0.85) 50%, rgba(37, 99, 235, 0.8) 100%);
+            background-size: cover;
+            background-position: center;
+            background-attachment: scroll;
+            position: relative;
+        }
+        
+        /* 画像を疑似要素で配置する方法 */
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('https://github.com/user-attachments/assets/9547018d-7da2-4cd9-8a9c-6e2bc22c6d71');
+            background-size: cover;
+            background-position: center;
+            opacity: 0.3;
+            z-index: 0;
+        }
+        
+        .hero-bg > * {
+            position: relative;
+            z-index: 1;
+        }
 
-/* タッチデバイス用の最適化 */
-@media (hover: none) {
-.feature-card:hover {
-transform: none;
-}
-}
+        /* テキストグラデーション */
+        .text-gradient {
+            background: linear-gradient(90deg, #60a5fa, #22d3ee);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
 
-/* スムーズなスクロール */
-html {
-scroll-behavior: smooth;
-}
-</style>
+        /* カード等のホバーアニメーション */
+        .feature-card {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+
+        /* SPA風表示切り替え用 */
+        .section {
+            display: none;
+            /* アニメーション時のtransformがfixed背景と競合するため、背景はscrollにするのが安全です */
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+        .section.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* タッチデバイス対策（scrollに統一したため不要ですが、念のため残しても問題ありません） */
+        @media (hover: none) {
+            .hero-bg {
+                background-attachment: scroll; 
+            }
+        }
+    </style>
 </head>
 <body class="text-gray-800">
 
@@ -115,50 +153,61 @@ scroll-behavior: smooth;
 </div>
 </header>
 
-<section id="home" class="section active">
-<div class="hero-gradient text-white py-20 md:py-32">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-<h2 class="text-4xl md:text-6xl font-extrabold mb-4 leading-tight">
-AIと共に生きる新世代へ<br class="hidden sm:block"><span class="text-cyan-300">可能性を解き放つ</span>
-</h2>
-<p class="text-lg md:text-2xl font-light mb-8 max-w-3xl mx-auto px-4">
-テクノロジー・言語・コストの壁を攻略し、<br class="hidden sm:block">人材とビジネスをあらゆる角度からスケール化
-</p>
-</div>
-</div>
-</section>
-</div>
-</div>
+ <main>
+       <section id="home" class="section active">
+    <div class="hero-bg relative flex items-center min-h-[90vh]">
+        <div class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32 text-center relative z-10">
+            <h2 class="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight tracking-tight font-en">
+                AIと共に生きる<br class="md:hidden" />新世代へ<br>
+                <span class="text-gradient">可能性を解き放つ</span>
+            </h2>
+            
+            <p class="text-base md:text-xl text-slate-200 mb-10 max-w-2xl mx-auto leading-relaxed font-light">
+                テクノロジー・言語・コストの壁を攻略。<br class="hidden md:block">
+                人材とビジネスをあらゆる角度からスケール化し、<br class="md:hidden">未来を実装します。
+            </p>
 
-<div class="py-16 md:py-24 bg-white">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-<h2 class="text-3xl md:text-4xl font-extrabold text-center mb-12">
-<span class="text-black">Aipath</span>の特徴
-</h2>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                <a href="#service" onclick="showSection('service')" class="w-full sm:w-auto px-8 py-4 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-500 transition duration-300 shadow-[0_0_20px_rgba(37,99,235,0.5)] flex justify-center items-center group">
+                    サービスを見る
+                    <svg class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+                </a>
+            </div>
+        </div>
+        
+        <div class="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-[#f8fafc] to-transparent z-0"></div>
+    </div>
 
-<div class="feature-card bg-gray-50 p-6 rounded-xl shadow-lg border-l-4 border-transparent hover:border-blue-500">
-<img src="https://imgtu.com/uploads/8ehs9ebs/r-gemini_generated_image_lxqemqlxqemqlxqe.webp" alt="専門人材イメージ" class="h-16 w-16 mx-auto mb-4 object-contain">
-<h3 class="text-xl font-bold mb-3 text-center">専門人材</h3>
-<p class="text-gray-600 text-center">DX、開発、教育それぞれの分野に特化した専門人材が、クライアントのニーズに寄り添いサポート</p>
-</div>
+    <!-- ★ ここから「Aipathの特徴」セクション（HOMEページ内） ★ -->
+    <div class="py-16 md:py-24 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-extrabold text-center mb-12">
+                <span class="text-black">Aipath</span>の特徴
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 
-<div class="feature-card bg-gray-50 p-6 rounded-xl shadow-lg border-l-4 border-transparent hover:border-blue-500">
-<img src="https://imgtu.com/uploads/8ehr7yp1/r-gemini_generated_image_w16704w16704w167.webp" alt="ITツールイメージ" class="h-16 w-16 mx-auto mb-4 object-contain">
-<h3 class="text-xl font-bold mb-3 text-center">ITツール</h3>
-<p class="text-gray-600 text-center">膨大なリストから最適なITツールを選定し、ROIの最大化を実現</p>
-</div>
+                <div class="feature-card bg-gray-50 p-6 rounded-xl shadow-lg border-l-4 border-transparent hover:border-blue-500">
+                    <img src="https://imgtu.com/uploads/8ehs9ebs/r-gemini_generated_image_lxqemqlxqemqlxqe.webp" alt="専門人材イメージ" class="h-16 w-16 mx-auto mb-4 object-contain">
+                    <h3 class="text-xl font-bold mb-3 text-center">専門人材</h3>
+                    <p class="text-gray-600 text-center">DX、開発、教育それぞれの分野に特化した専門人材が、クライアントのニーズに寄り添いサポート</p>
+                </div>
 
-<div class="feature-card bg-gray-50 p-6 rounded-xl shadow-lg border-l-4 border-transparent hover:border-blue-500">
-<img src="https://imgtu.com/uploads/8ehpqne1/r-gemini_generated_image_g1y9u7g1y9u7g1y9.webp" alt="コンサルティングイメージ" class="h-16 w-16 mx-auto mb-4 object-contain">
-<h3 class="text-xl font-bold mb-3 text-center">コンサルティング</h3>
-<p class="text-gray-600 text-center">ヒアリングから設計、PoC、運用、アフターサービスまで一貫したサポートを提供</p>
-</div>
+                <div class="feature-card bg-gray-50 p-6 rounded-xl shadow-lg border-l-4 border-transparent hover:border-blue-500">
+                    <img src="https://imgtu.com/uploads/8ehr7yp1/r-gemini_generated_image_w16704w16704w167.webp" alt="ITツールイメージ" class="h-16 w-16 mx-auto mb-4 object-contain">
+                    <h3 class="text-xl font-bold mb-3 text-center">ITツール</h3>
+                    <p class="text-gray-600 text-center">膨大なリストから最適なITツールを選定し、ROIの最大化を実現</p>
+                </div>
 
-</div>
-</div>
-</div>
-</section>
+                <div class="feature-card bg-gray-50 p-6 rounded-xl shadow-lg border-l-4 border-transparent hover:border-blue-500">
+                    <img src="https://imgtu.com/uploads/8ehpqne1/r-gemini_generated_image_g1y9u7g1y9u7g1y9.webp" alt="コンサルティングイメージ" class="h-16 w-16 mx-auto mb-4 object-contain">
+                    <h3 class="text-xl font-bold mb-3 text-center">コンサルティング</h3>
+                    <p class="text-gray-600 text-center">ヒアリングから設計、PoC、運用、アフターサービスまで一貫したサポートを提供</p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section> <!-- ★ ここでHOMEセクションを閉じる ★ -->
 
 <section id="service" class="section py-16 md:py-24 bg-white">
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
