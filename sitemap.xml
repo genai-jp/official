@@ -3,7 +3,7 @@
   
   <!-- ホームページ -->
   <url>
-    <loc>https://aipath-jp.github.io/official/</loc>
+    <loc>https://aipath-jp.github.io/home/</loc>
     <lastmod>2025-01-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
@@ -11,7 +11,7 @@
   
   <!-- サービスページ -->
   <url>
-    <loc>https://aipath-jp.github.io/official/#service</loc>
+    <loc>https://aipath-jp.github.io/home/#service</loc>
     <lastmod>2025-01-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
@@ -19,7 +19,7 @@
   
   <!-- About Usページ -->
   <url>
-    <loc>https://aipath-jp.github.io/official/#about</loc>
+    <loc>https://aipath-jp.github.io/home/#about</loc>
     <lastmod>2025-01-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -27,7 +27,7 @@
   
   <!-- ブログ一覧ページ -->
   <url>
-    <loc>https://aipath-jp.github.io/official/#blog</loc>
+    <loc>https://aipath-jp.github.io/home/#blog</loc>
     <lastmod>2025-01-20</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -35,7 +35,7 @@
   
   <!-- ブログ記事1 -->
   <url>
-    <loc>https://aipath-jp.github.io/official/#blog-blog1</loc>
+    <loc>https://aipath-jp.github.io/home/#blog-blog1</loc>
     <lastmod>2025-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -43,7 +43,7 @@
   
   <!-- ブログ記事2 -->
   <url>
-    <loc>https://aipath-jp.github.io/official/#blog-blog2</loc>
+    <loc>https://aipath-jp.github.io/home/#blog-blog2</loc>
     <lastmod>2025-01-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -51,7 +51,7 @@
   
   <!-- プライバシーポリシー -->
   <url>
-    <loc>https://aipath-jp.github.io/official/#privacy</loc>
+    <loc>https://aipath-jp.github.io/home/#privacy</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
@@ -59,7 +59,7 @@
   
   <!-- 利用規約 -->
   <url>
-    <loc>https://aipath-jp.github.io/official/#terms</loc>
+    <loc>https://aipath-jp.github.io/home/#terms</loc>
     <lastmod>2025-01-01</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
@@ -67,7 +67,7 @@
   
   <!-- お問い合わせ -->
   <url>
-    <loc>https://aipath-jp.github.io/official/#contact</loc>
+    <loc>https://aipath-jp.github.io/home/#contact</loc>
     <lastmod>2025-01-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
